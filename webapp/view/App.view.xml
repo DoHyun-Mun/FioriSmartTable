@@ -4,11 +4,4 @@
     xmlns="sap.m">
     <App id="app">
     </App>
-<!--
-    <FlexibleColumnLayout id="flexibleColumnLayout" backgroundDesign="Solid">
-		<beginColumnPages>
-			<mvc:XMLView id="beginView" viewName="com.sap.demo.smarttabledemo.view.Main"/>
-		</beginColumnPages>
-	</FlexibleColumnLayout>
--->    
 </mvc:View>

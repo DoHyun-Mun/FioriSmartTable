@@ -19,7 +19,13 @@
             <f:DynamicPageHeader id="dynamicPageHeader">
                 <f:content>
                     <smartfilterbar:SmartFilterBar id="sfb_smartFilterBar" useToolbar="false" smartVariant="svm_smartVariantManagement"
-                        entitySet="DS_01" persistencyKey="SmartFilter_Explored"></smartfilterbar:SmartFilterBar>
+                        entitySet="DS_01" persistencyKey="SmartFilter_Explored">
+                    		<smartfilterbar:controlConfiguration>
+                                <smartfilterbar:ControlConfiguration id="sfb_controlConf1"
+                                    key="qcode" visibleInAdvancedArea="true">
+                                </smartfilterbar:ControlConfiguration>
+                            </smartfilterbar:controlConfiguration>
+                    </smartfilterbar:SmartFilterBar>
                 </f:content>
             </f:DynamicPageHeader>
         </f:header>
