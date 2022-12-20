@@ -1,0 +1,46 @@
+<mvc:View controllerName="com.sap.demo.smarttabledemo.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:f="sap.f"
+    xmlns:sv="sap.ui.comp.smartvariants"
+    xmlns:smartfilterbar="sap.ui.comp.smartfilterbar"
+    xmlns:smarttable="sap.ui.comp.smarttable"
+    xmlns="sap.m">
+    <f:DynamicPage id="dynamicPage" showFooter="false">
+        <f:title>
+            <f:DynamicPageTitle id="dynamicPageTitle">
+                <f:heading>
+                    <sv:SmartVariantManagement id="svm_smartVariantManagement" persistencyKey="SmartFilter_Variant" showShare="false" showExecuteOnSelection="true">
+                    </sv:SmartVariantManagement>
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+        
+        <f:header>
+            <f:DynamicPageHeader id="dynamicPageHeader">
+                <f:content>
+                    <smartfilterbar:SmartFilterBar id="sfb_smartFilterBar" useToolbar="false" smartVariant="svm_smartVariantManagement"
+                        entitySet="DS_01" persistencyKey="SmartFilter_Explored"></smartfilterbar:SmartFilterBar>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+
+        <f:content>
+            <smarttable:SmartTable id="st_smartTable" entitySet="DS_01" smartFilterId="sfb_smartFilterBar" useVariantManagement="true"
+                useTablePersonalisation="true" smartVariant="svm_smartVariantManagement" header="Q코드리스트" tableType="ResponsiveTable"
+                enableAutoBinding="true" class="sapUiResponsiveContentPaddig" showRowCount="false" demandPopin="true">
+                <smarttable:customToolbar>
+                    <Toolbar id="st_toolbar">
+                        <ToolbarSpacer id="st_spacer"></ToolbarSpacer>
+                        <Button id="btn_custom" icon="sap-icon://action" text="{i18n>btnAction}" press=".btnOnPress" type="Transparent" />
+                    </Toolbar>
+                </smarttable:customToolbar>
+                <smarttable:items>
+                    <Table id="st_table" growing="true" fixedLayout="false" itemPress=".onPress" mode="SingleSelectMaster">
+                        <ColumnListItem id="cli_item" type="Navigation" />
+                    </Table>
+                </smarttable:items>
+            </smarttable:SmartTable>
+        </f:content>
+    </f:DynamicPage>
+    
+</mvc:View>

@@ -1,0 +1,52 @@
+<mvc:View xmlns:smartmultiedit="sap.ui.comp.smartmultiedit" controllerName="com.sap.demo.smarttabledemo.controller.Detail"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:smartform="sap.ui.comp.smartform"
+    xmlns:smartfield="sap.ui.comp.smartfield"
+    >
+    
+    <uxap:ObjectPageLayout id="uxap_objectPageLayout" enableLazyLoading="true" showTitleInHeaderContent="true">
+        <uxap:headerTitle>
+            <uxap:ObjectPageHeader id="uxap_objectPageHeader" objectTitle="QCode Detail Page" objectSubtitle="QCode: {qcode}" 
+                isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="false" isObjectSubtitleAlwaysVisible="false">
+            </uxap:ObjectPageHeader>
+        </uxap:headerTitle>
+        <uxap:sections>
+            <uxap:ObjectPageSection id="uxap_objectionPageSection" titleUppercase="true" title="General Infomations">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection id="uxap_objectPageSubSection" title="General Infomations">
+                        <smartform:SmartForm id="uxap_smartForm" editable="false">
+                            <smartform:Group id="uxap_group1">
+                                <smartform:GroupElement id="uxap_groupElement11" label="QCode">
+                                    <smartfield:SmartField id="uxap_smartField11" value="{qcode}"></smartfield:SmartField>
+                                </smartform:GroupElement>
+                            </smartform:Group>
+                            <smartform:Group id="uxap_group2">
+                                <smartform:GroupElement id="uxap_groupElement21" label="Cost1">
+                                    <smartfield:SmartField id="uxap_smartField21" value="{cost1}"></smartfield:SmartField>
+                                </smartform:GroupElement>
+                                <smartform:GroupElement id="uxap_groupElement22" label="Cost2">
+                                    <smartfield:SmartField id="uxap_smartField22" value="{cost2}"></smartfield:SmartField>
+                                </smartform:GroupElement>
+                                <smartform:GroupElement id="uxap_groupElement23" label="Date">
+                                    <smartfield:SmartField id="uxap_smartField23" value="{date1}"></smartfield:SmartField>
+                                </smartform:GroupElement>
+                            </smartform:Group>
+                        </smartform:SmartForm>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection id="uxap_objectionPageSection2" titleUppercase="true" title="Section">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection id="uxap_objectPageSubSection2" title="Other Section">
+                        <smartform:SmartForm id="uxap_smartForm2" editable="false">
+                            <smartform:Group id="uxap_group21">
+                            </smartform:Group>
+                        </smartform:SmartForm>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+    </uxap:ObjectPageLayout>
+</mvc:View>

@@ -1,0 +1,1561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/HTML5.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="HTML5" Namespace="com.sap.vocabularies.HTML5.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="DSOdataService" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityContainer Name="EntityContainer" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="DS_01" EntityType="DSOdataService.DS_01"/>
+                <FunctionImport Name="DS_01_draftPrepare" EntitySet="DS_01" ReturnType="DSOdataService.DS_01" m:HttpMethod="POST" sap:action-for="DSOdataService.DS_01">
+                    <Parameter Name="qcode" Type="Edm.String" MaxLength="5" Nullable="false" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="DS_01_draftActivate" EntitySet="DS_01" ReturnType="DSOdataService.DS_01" m:HttpMethod="POST" sap:action-for="DSOdataService.DS_01">
+                    <Parameter Name="qcode" Type="Edm.String" MaxLength="5" Nullable="false" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="DS_01_draftEdit" EntitySet="DS_01" ReturnType="DSOdataService.DS_01" m:HttpMethod="POST" sap:action-for="DSOdataService.DS_01">
+                    <Parameter Name="qcode" Type="Edm.String" MaxLength="5" Nullable="false" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <EntitySet Name="DS_02" EntityType="DSOdataService.DS_02"/>
+                <FunctionImport Name="DS_02_draftPrepare" EntitySet="DS_02" ReturnType="DSOdataService.DS_02" m:HttpMethod="POST" sap:action-for="DSOdataService.DS_02">
+                    <Parameter Name="fclt_id" Type="Edm.String" MaxLength="6" Nullable="false" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="DS_02_draftActivate" EntitySet="DS_02" ReturnType="DSOdataService.DS_02" m:HttpMethod="POST" sap:action-for="DSOdataService.DS_02">
+                    <Parameter Name="fclt_id" Type="Edm.String" MaxLength="6" Nullable="false" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="DS_02_draftEdit" EntitySet="DS_02" ReturnType="DSOdataService.DS_02" m:HttpMethod="POST" sap:action-for="DSOdataService.DS_02">
+                    <Parameter Name="fclt_id" Type="Edm.String" MaxLength="6" Nullable="false" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <EntitySet Name="DS_03" EntityType="DSOdataService.DS_03"/>
+                <FunctionImport Name="DS_03_draftPrepare" EntitySet="DS_03" ReturnType="DSOdataService.DS_03" m:HttpMethod="POST" sap:action-for="DSOdataService.DS_03">
+                    <Parameter Name="fclt_id" Type="Edm.String" MaxLength="6" Nullable="false" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="DS_03_draftActivate" EntitySet="DS_03" ReturnType="DSOdataService.DS_03" m:HttpMethod="POST" sap:action-for="DSOdataService.DS_03">
+                    <Parameter Name="fclt_id" Type="Edm.String" MaxLength="6" Nullable="false" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="DS_03_draftEdit" EntitySet="DS_03" ReturnType="DSOdataService.DS_03" m:HttpMethod="POST" sap:action-for="DSOdataService.DS_03">
+                    <Parameter Name="fclt_id" Type="Edm.String" MaxLength="6" Nullable="false" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <EntitySet Name="DS_04" EntityType="DSOdataService.DS_04"/>
+                <EntitySet Name="DS_05" EntityType="DSOdataService.DS_05"/>
+                <EntitySet Name="DS_06" EntityType="DSOdataService.DS_06"/>
+                <EntitySet Name="DS_03_Performance" EntityType="DSOdataService.DS_03_Performance"/>
+                <EntitySet Name="card01" EntityType="DSOdataService.card01"/>
+                <FunctionImport Name="card01_draftPrepare" EntitySet="card01" ReturnType="DSOdataService.card01" m:HttpMethod="POST" sap:action-for="DSOdataService.card01">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="card01_draftActivate" EntitySet="card01" ReturnType="DSOdataService.card01" m:HttpMethod="POST" sap:action-for="DSOdataService.card01">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="card01_draftEdit" EntitySet="card01" ReturnType="DSOdataService.card01" m:HttpMethod="POST" sap:action-for="DSOdataService.card01">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <EntitySet Name="card02_01" EntityType="DSOdataService.card02_01"/>
+                <FunctionImport Name="card02_01_draftPrepare" EntitySet="card02_01" ReturnType="DSOdataService.card02_01" m:HttpMethod="POST" sap:action-for="DSOdataService.card02_01">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="card02_01_draftActivate" EntitySet="card02_01" ReturnType="DSOdataService.card02_01" m:HttpMethod="POST" sap:action-for="DSOdataService.card02_01">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="card02_01_draftEdit" EntitySet="card02_01" ReturnType="DSOdataService.card02_01" m:HttpMethod="POST" sap:action-for="DSOdataService.card02_01">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <EntitySet Name="card02_02" EntityType="DSOdataService.card02_02"/>
+                <FunctionImport Name="card02_02_draftPrepare" EntitySet="card02_02" ReturnType="DSOdataService.card02_02" m:HttpMethod="POST" sap:action-for="DSOdataService.card02_02">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="card02_02_draftActivate" EntitySet="card02_02" ReturnType="DSOdataService.card02_02" m:HttpMethod="POST" sap:action-for="DSOdataService.card02_02">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="card02_02_draftEdit" EntitySet="card02_02" ReturnType="DSOdataService.card02_02" m:HttpMethod="POST" sap:action-for="DSOdataService.card02_02">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <EntitySet Name="card02_03" EntityType="DSOdataService.card02_03"/>
+                <FunctionImport Name="card02_03_draftPrepare" EntitySet="card02_03" ReturnType="DSOdataService.card02_03" m:HttpMethod="POST" sap:action-for="DSOdataService.card02_03">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="card02_03_draftActivate" EntitySet="card02_03" ReturnType="DSOdataService.card02_03" m:HttpMethod="POST" sap:action-for="DSOdataService.card02_03">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="card02_03_draftEdit" EntitySet="card02_03" ReturnType="DSOdataService.card02_03" m:HttpMethod="POST" sap:action-for="DSOdataService.card02_03">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <EntitySet Name="card02_04" EntityType="DSOdataService.card02_04"/>
+                <FunctionImport Name="card02_04_draftPrepare" EntitySet="card02_04" ReturnType="DSOdataService.card02_04" m:HttpMethod="POST" sap:action-for="DSOdataService.card02_04">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="card02_04_draftActivate" EntitySet="card02_04" ReturnType="DSOdataService.card02_04" m:HttpMethod="POST" sap:action-for="DSOdataService.card02_04">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="card02_04_draftEdit" EntitySet="card02_04" ReturnType="DSOdataService.card02_04" m:HttpMethod="POST" sap:action-for="DSOdataService.card02_04">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <EntitySet Name="card03" EntityType="DSOdataService.card03"/>
+                <FunctionImport Name="card03_draftPrepare" EntitySet="card03" ReturnType="DSOdataService.card03" m:HttpMethod="POST" sap:action-for="DSOdataService.card03">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="card03_draftActivate" EntitySet="card03" ReturnType="DSOdataService.card03" m:HttpMethod="POST" sap:action-for="DSOdataService.card03">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="card03_draftEdit" EntitySet="card03" ReturnType="DSOdataService.card03" m:HttpMethod="POST" sap:action-for="DSOdataService.card03">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <EntitySet Name="card02_01_Performance" EntityType="DSOdataService.card02_01_Performance"/>
+                <EntitySet Name="card03_Performance" EntityType="DSOdataService.card03_Performance"/>
+                <FunctionImport Name="card03_Performance_draftPrepare" EntitySet="card03_Performance" ReturnType="DSOdataService.card03_Performance" m:HttpMethod="POST" sap:action-for="DSOdataService.card03_Performance">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="card03_Performance_draftActivate" EntitySet="card03_Performance" ReturnType="DSOdataService.card03_Performance" m:HttpMethod="POST" sap:action-for="DSOdataService.card03_Performance">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="card03_Performance_draftEdit" EntitySet="card03_Performance" ReturnType="DSOdataService.card03_Performance" m:HttpMethod="POST" sap:action-for="DSOdataService.card03_Performance">
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <EntitySet Name="card04" EntityType="DSOdataService.card04"/>
+                <EntitySet Name="card_detail" EntityType="DSOdataService.card_detail"/>
+                <FunctionImport Name="card_detail_draftPrepare" EntitySet="card_detail" ReturnType="DSOdataService.card_detail" m:HttpMethod="POST" sap:action-for="DSOdataService.card_detail">
+                    <Parameter Name="fclt_id" Type="Edm.String" MaxLength="6" Nullable="false" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="card_detail_draftActivate" EntitySet="card_detail" ReturnType="DSOdataService.card_detail" m:HttpMethod="POST" sap:action-for="DSOdataService.card_detail">
+                    <Parameter Name="fclt_id" Type="Edm.String" MaxLength="6" Nullable="false" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="card_detail_draftEdit" EntitySet="card_detail" ReturnType="DSOdataService.card_detail" m:HttpMethod="POST" sap:action-for="DSOdataService.card_detail">
+                    <Parameter Name="fclt_id" Type="Edm.String" MaxLength="6" Nullable="false" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+                    <Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <EntitySet Name="DraftAdministrativeData" EntityType="DSOdataService.DraftAdministrativeData"/>
+                <AssociationSet Name="DS_01_DraftAdministrativeData" Association="DSOdataService.DS_01_DraftAdministrativeData">
+                    <End Role="DS_01" EntitySet="DS_01"/>
+                    <End Role="DraftAdministrativeData" EntitySet="DraftAdministrativeData"/>
+                </AssociationSet>
+                <AssociationSet Name="DS_01_SiblingEntity" Association="DSOdataService.DS_01_SiblingEntity">
+                    <End Role="DS_01" EntitySet="DS_01"/>
+                    <End Role="DS_011" EntitySet="DS_01"/>
+                </AssociationSet>
+                <AssociationSet Name="DS_02_DraftAdministrativeData" Association="DSOdataService.DS_02_DraftAdministrativeData">
+                    <End Role="DS_02" EntitySet="DS_02"/>
+                    <End Role="DraftAdministrativeData" EntitySet="DraftAdministrativeData"/>
+                </AssociationSet>
+                <AssociationSet Name="DS_02_SiblingEntity" Association="DSOdataService.DS_02_SiblingEntity">
+                    <End Role="DS_02" EntitySet="DS_02"/>
+                    <End Role="DS_021" EntitySet="DS_02"/>
+                </AssociationSet>
+                <AssociationSet Name="DS_03_DraftAdministrativeData" Association="DSOdataService.DS_03_DraftAdministrativeData">
+                    <End Role="DS_03" EntitySet="DS_03"/>
+                    <End Role="DraftAdministrativeData" EntitySet="DraftAdministrativeData"/>
+                </AssociationSet>
+                <AssociationSet Name="DS_03_SiblingEntity" Association="DSOdataService.DS_03_SiblingEntity">
+                    <End Role="DS_03" EntitySet="DS_03"/>
+                    <End Role="DS_031" EntitySet="DS_03"/>
+                </AssociationSet>
+                <AssociationSet Name="card01_DraftAdministrativeData" Association="DSOdataService.card01_DraftAdministrativeData">
+                    <End Role="card01" EntitySet="card01"/>
+                    <End Role="DraftAdministrativeData" EntitySet="DraftAdministrativeData"/>
+                </AssociationSet>
+                <AssociationSet Name="card01_SiblingEntity" Association="DSOdataService.card01_SiblingEntity">
+                    <End Role="card01" EntitySet="card01"/>
+                    <End Role="card011" EntitySet="card01"/>
+                </AssociationSet>
+                <AssociationSet Name="card02_01_DraftAdministrativeData" Association="DSOdataService.card02_01_DraftAdministrativeData">
+                    <End Role="card02_01" EntitySet="card02_01"/>
+                    <End Role="DraftAdministrativeData" EntitySet="DraftAdministrativeData"/>
+                </AssociationSet>
+                <AssociationSet Name="card02_01_SiblingEntity" Association="DSOdataService.card02_01_SiblingEntity">
+                    <End Role="card02_01" EntitySet="card02_01"/>
+                    <End Role="card02_011" EntitySet="card02_01"/>
+                </AssociationSet>
+                <AssociationSet Name="card02_02_DraftAdministrativeData" Association="DSOdataService.card02_02_DraftAdministrativeData">
+                    <End Role="card02_02" EntitySet="card02_02"/>
+                    <End Role="DraftAdministrativeData" EntitySet="DraftAdministrativeData"/>
+                </AssociationSet>
+                <AssociationSet Name="card02_02_SiblingEntity" Association="DSOdataService.card02_02_SiblingEntity">
+                    <End Role="card02_02" EntitySet="card02_02"/>
+                    <End Role="card02_021" EntitySet="card02_02"/>
+                </AssociationSet>
+                <AssociationSet Name="card02_03_DraftAdministrativeData" Association="DSOdataService.card02_03_DraftAdministrativeData">
+                    <End Role="card02_03" EntitySet="card02_03"/>
+                    <End Role="DraftAdministrativeData" EntitySet="DraftAdministrativeData"/>
+                </AssociationSet>
+                <AssociationSet Name="card02_03_SiblingEntity" Association="DSOdataService.card02_03_SiblingEntity">
+                    <End Role="card02_03" EntitySet="card02_03"/>
+                    <End Role="card02_031" EntitySet="card02_03"/>
+                </AssociationSet>
+                <AssociationSet Name="card02_04_DraftAdministrativeData" Association="DSOdataService.card02_04_DraftAdministrativeData">
+                    <End Role="card02_04" EntitySet="card02_04"/>
+                    <End Role="DraftAdministrativeData" EntitySet="DraftAdministrativeData"/>
+                </AssociationSet>
+                <AssociationSet Name="card02_04_SiblingEntity" Association="DSOdataService.card02_04_SiblingEntity">
+                    <End Role="card02_04" EntitySet="card02_04"/>
+                    <End Role="card02_041" EntitySet="card02_04"/>
+                </AssociationSet>
+                <AssociationSet Name="card03_DraftAdministrativeData" Association="DSOdataService.card03_DraftAdministrativeData">
+                    <End Role="card03" EntitySet="card03"/>
+                    <End Role="DraftAdministrativeData" EntitySet="DraftAdministrativeData"/>
+                </AssociationSet>
+                <AssociationSet Name="card03_SiblingEntity" Association="DSOdataService.card03_SiblingEntity">
+                    <End Role="card03" EntitySet="card03"/>
+                    <End Role="card031" EntitySet="card03"/>
+                </AssociationSet>
+                <AssociationSet Name="card03_Performance_DraftAdministrativeData" Association="DSOdataService.card03_Performance_DraftAdministrativeData">
+                    <End Role="card03_Performance" EntitySet="card03_Performance"/>
+                    <End Role="DraftAdministrativeData" EntitySet="DraftAdministrativeData"/>
+                </AssociationSet>
+                <AssociationSet Name="card03_Performance_SiblingEntity" Association="DSOdataService.card03_Performance_SiblingEntity">
+                    <End Role="card03_Performance" EntitySet="card03_Performance"/>
+                    <End Role="card03_Performance1" EntitySet="card03_Performance"/>
+                </AssociationSet>
+                <AssociationSet Name="card_detail_DraftAdministrativeData" Association="DSOdataService.card_detail_DraftAdministrativeData">
+                    <End Role="card_detail" EntitySet="card_detail"/>
+                    <End Role="DraftAdministrativeData" EntitySet="DraftAdministrativeData"/>
+                </AssociationSet>
+                <AssociationSet Name="card_detail_SiblingEntity" Association="DSOdataService.card_detail_SiblingEntity">
+                    <End Role="card_detail" EntitySet="card_detail"/>
+                    <End Role="card_detail1" EntitySet="card_detail"/>
+                </AssociationSet>
+            </EntityContainer>
+            <EntityType Name="DS_01">
+                <Key>
+                    <PropertyRef Name="qcode"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="qcode" Type="Edm.String" MaxLength="5" Nullable="false"/>
+                <Property Name="cost1" Type="Edm.Decimal" Scale="10" Precision="15"/>
+                <Property Name="curr1" Type="Edm.String" MaxLength="3"/>
+                <Property Name="cost2" Type="Edm.Int64"/>
+                <Property Name="curr2" Type="Edm.String" MaxLength="3"/>
+                <Property Name="date1" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Relationship="DSOdataService.DS_01_DraftAdministrativeData" FromRole="DS_01" ToRole="DraftAdministrativeData"/>
+                <Property Name="DraftAdministrativeData_DraftUUID" Type="Edm.Guid"/>
+                <NavigationProperty Name="SiblingEntity" Relationship="DSOdataService.DS_01_SiblingEntity" FromRole="DS_01" ToRole="DS_011"/>
+            </EntityType>
+            <EntityType Name="DS_02">
+                <Key>
+                    <PropertyRef Name="fclt_id"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="fclt_id" Type="Edm.String" MaxLength="6" Nullable="false"/>
+                <Property Name="asst_no" Type="Edm.String" MaxLength="5"/>
+                <Property Name="asst_type1" Type="Edm.String" MaxLength="10"/>
+                <Property Name="asst_type2" Type="Edm.String" MaxLength="10"/>
+                <Property Name="qcode" Type="Edm.String" MaxLength="5"/>
+                <Property Name="mst_code" Type="Edm.String" MaxLength="3"/>
+                <Property Name="asst_status" Type="Edm.String" MaxLength="10"/>
+                <Property Name="fclt_area" Type="Edm.String" MaxLength="3"/>
+                <Property Name="model" Type="Edm.String" MaxLength="2"/>
+                <Property Name="serial_no" Type="Edm.String" MaxLength="5"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Relationship="DSOdataService.DS_02_DraftAdministrativeData" FromRole="DS_02" ToRole="DraftAdministrativeData"/>
+                <Property Name="DraftAdministrativeData_DraftUUID" Type="Edm.Guid"/>
+                <NavigationProperty Name="SiblingEntity" Relationship="DSOdataService.DS_02_SiblingEntity" FromRole="DS_02" ToRole="DS_021"/>
+            </EntityType>
+            <EntityType Name="DS_03">
+                <Key>
+                    <PropertyRef Name="fclt_id"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="fclt_id" Type="Edm.String" MaxLength="6" Nullable="false"/>
+                <Property Name="mst_code" Type="Edm.String" MaxLength="3"/>
+                <Property Name="qcode" Type="Edm.String" MaxLength="5"/>
+                <Property Name="fclt_status" Type="Edm.String" MaxLength="6"/>
+                <Property Name="ams_status" Type="Edm.String" MaxLength="6"/>
+                <Property Name="rgst_type" Type="Edm.String" MaxLength="10"/>
+                <Property Name="install_stdt" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_schd_eddt" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_eddt" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_stdt" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_schd_eddt" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_eddt" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="asst_div" Type="Edm.String" MaxLength="5"/>
+                <Property Name="use_org" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mng_org" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mngr" Type="Edm.String" MaxLength="10"/>
+                <Property Name="inout_div" Type="Edm.String" MaxLength="8"/>
+                <Property Name="district" Type="Edm.String" MaxLength="12"/>
+                <Property Name="building" Type="Edm.String" MaxLength="20"/>
+                <Property Name="floor" Type="Edm.String" MaxLength="3"/>
+                <Property Name="line" Type="Edm.String" MaxLength="3"/>
+                <Property Name="bay" Type="Edm.String" MaxLength="3"/>
+                <Property Name="site" Type="Edm.String" MaxLength="3"/>
+                <Property Name="gbm" Type="Edm.String" MaxLength="10"/>
+                <Property Name="gain_dt" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Relationship="DSOdataService.DS_03_DraftAdministrativeData" FromRole="DS_03" ToRole="DraftAdministrativeData"/>
+                <Property Name="DraftAdministrativeData_DraftUUID" Type="Edm.Guid"/>
+                <NavigationProperty Name="SiblingEntity" Relationship="DSOdataService.DS_03_SiblingEntity" FromRole="DS_03" ToRole="DS_031"/>
+            </EntityType>
+            <EntityType Name="DS_04">
+                <Key>
+                    <PropertyRef Name="fclt_id"/>
+                </Key>
+                <Property Name="fclt_id" Type="Edm.String" MaxLength="6" Nullable="false"/>
+                <Property Name="eam_status" Type="Edm.String" MaxLength="10"/>
+                <Property Name="ams_status" Type="Edm.String" MaxLength="6"/>
+            </EntityType>
+            <EntityType Name="DS_05">
+                <Property Name="zfrdt" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="ztodt" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="bname" Type="Edm.String" MaxLength="15"/>
+                <Property Name="zseq" Type="Edm.Int32"/>
+                <Property Name="ztype" Type="Edm.String" MaxLength="1"/>
+                <Property Name="tcode" Type="Edm.String" MaxLength="30"/>
+                <Property Name="nerp_tcode_nm" Type="Edm.String" MaxLength="100"/>
+                <Property Name="percentile" Type="Edm.String" MaxLength="5"/>
+                <Property Name="batdt" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="zpgmtype" Type="Edm.String" MaxLength="2"/>
+                <Property Name="intent" Type="Edm.String" MaxLength="30"/>
+                <Property Name="url" Type="Edm.String" MaxLength="200"/>
+                <Property Name="icon" Type="Edm.String" MaxLength="100"/>
+                <Property Name="sysalias_tgt" Type="Edm.String" MaxLength="5"/>
+            </EntityType>
+            <EntityType Name="DS_06">
+                <Key>
+                    <PropertyRef Name="seqId"/>
+                </Key>
+                <Property Name="seqId" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="activityId" Type="Edm.String" MaxLength="30"/>
+                <Property Name="claimedAt" Type="Edm.String" MaxLength="30"/>
+                <Property Name="completedAt" Type="Edm.String" MaxLength="30"/>
+                <Property Name="createdAt" Type="Edm.String" MaxLength="30"/>
+                <Property Name="description" Type="Edm.String" MaxLength="100"/>
+                <Property Name="id" Type="Edm.String" MaxLength="50"/>
+                <Property Name="processor" Type="Edm.String" MaxLength="10"/>
+                <Property Name="recipientUsers" Type="Edm.String" MaxLength="50"/>
+                <Property Name="recipientGroups" Type="Edm.String" MaxLength="50"/>
+                <Property Name="status" Type="Edm.String" MaxLength="30"/>
+                <Property Name="subject" Type="Edm.String" MaxLength="50"/>
+                <Property Name="workflowDefinitionId" Type="Edm.String" MaxLength="50"/>
+                <Property Name="workflowInstanceId" Type="Edm.String" MaxLength="50"/>
+                <Property Name="priority" Type="Edm.String" MaxLength="30"/>
+                <Property Name="dueDate" Type="Edm.String" MaxLength="30"/>
+                <Property Name="createdBy" Type="Edm.String" MaxLength="30"/>
+                <Property Name="definitionId" Type="Edm.String" MaxLength="50"/>
+                <Property Name="lastChangedAt" Type="Edm.String" MaxLength="30"/>
+                <Property Name="applicationScope" Type="Edm.String" MaxLength="10"/>
+            </EntityType>
+            <EntityType Name="DS_03_Performance">
+                <Key>
+                    <PropertyRef Name="seqNo"/>
+                </Key>
+                <Property Name="seqNo" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="fclt_id_1" Type="Edm.String" MaxLength="6"/>
+                <Property Name="mst_code_1" Type="Edm.String" MaxLength="3"/>
+                <Property Name="qcode_1" Type="Edm.String" MaxLength="5"/>
+                <Property Name="fclt_status_1" Type="Edm.String" MaxLength="6"/>
+                <Property Name="ams_status_1" Type="Edm.String" MaxLength="6"/>
+                <Property Name="rgst_type_1" Type="Edm.String" MaxLength="10"/>
+                <Property Name="install_stdt_1" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_schd_eddt_1" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_eddt_1" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_stdt_1" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_schd_eddt_1" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_eddt_1" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="asst_div_1" Type="Edm.String" MaxLength="5"/>
+                <Property Name="use_org_1" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mng_org_1" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mngr_1" Type="Edm.String" MaxLength="10"/>
+                <Property Name="inout_div_1" Type="Edm.String" MaxLength="8"/>
+                <Property Name="district_1" Type="Edm.String" MaxLength="12"/>
+                <Property Name="building_1" Type="Edm.String" MaxLength="20"/>
+                <Property Name="floor_1" Type="Edm.String" MaxLength="3"/>
+                <Property Name="line_1" Type="Edm.String" MaxLength="3"/>
+                <Property Name="bay_1" Type="Edm.String" MaxLength="3"/>
+                <Property Name="site_1" Type="Edm.String" MaxLength="3"/>
+                <Property Name="gbm_1" Type="Edm.String" MaxLength="10"/>
+                <Property Name="gain_dt_1" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="fclt_id_2" Type="Edm.String" MaxLength="6"/>
+                <Property Name="mst_code_2" Type="Edm.String" MaxLength="3"/>
+                <Property Name="qcode_2" Type="Edm.String" MaxLength="5"/>
+                <Property Name="fclt_status_2" Type="Edm.String" MaxLength="6"/>
+                <Property Name="ams_status_2" Type="Edm.String" MaxLength="6"/>
+                <Property Name="rgst_type_2" Type="Edm.String" MaxLength="10"/>
+                <Property Name="install_stdt_2" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_schd_eddt_2" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_eddt_2" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_stdt_2" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_schd_eddt_2" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_eddt_2" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="asst_div_2" Type="Edm.String" MaxLength="5"/>
+                <Property Name="use_org_2" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mng_org_2" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mngr_2" Type="Edm.String" MaxLength="10"/>
+                <Property Name="inout_div_2" Type="Edm.String" MaxLength="8"/>
+                <Property Name="district_2" Type="Edm.String" MaxLength="12"/>
+                <Property Name="building_2" Type="Edm.String" MaxLength="20"/>
+                <Property Name="floor_2" Type="Edm.String" MaxLength="3"/>
+                <Property Name="line_2" Type="Edm.String" MaxLength="3"/>
+                <Property Name="bay_2" Type="Edm.String" MaxLength="3"/>
+                <Property Name="site_2" Type="Edm.String" MaxLength="3"/>
+                <Property Name="gbm_2" Type="Edm.String" MaxLength="10"/>
+                <Property Name="gain_dt_2" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="fclt_id_3" Type="Edm.String" MaxLength="6"/>
+                <Property Name="mst_code_3" Type="Edm.String" MaxLength="3"/>
+                <Property Name="qcode_3" Type="Edm.String" MaxLength="5"/>
+                <Property Name="fclt_status_3" Type="Edm.String" MaxLength="6"/>
+                <Property Name="ams_status_3" Type="Edm.String" MaxLength="6"/>
+                <Property Name="rgst_type_3" Type="Edm.String" MaxLength="10"/>
+                <Property Name="install_stdt_3" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_schd_eddt_3" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_eddt_3" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_stdt_3" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_schd_eddt_3" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_eddt_3" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="asst_div_3" Type="Edm.String" MaxLength="5"/>
+                <Property Name="use_org_3" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mng_org_3" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mngr_3" Type="Edm.String" MaxLength="10"/>
+                <Property Name="inout_div_3" Type="Edm.String" MaxLength="8"/>
+                <Property Name="district_3" Type="Edm.String" MaxLength="12"/>
+                <Property Name="building_3" Type="Edm.String" MaxLength="20"/>
+                <Property Name="floor_3" Type="Edm.String" MaxLength="3"/>
+                <Property Name="line_3" Type="Edm.String" MaxLength="3"/>
+                <Property Name="bay_3" Type="Edm.String" MaxLength="3"/>
+                <Property Name="site_3" Type="Edm.String" MaxLength="3"/>
+                <Property Name="gbm_3" Type="Edm.String" MaxLength="10"/>
+                <Property Name="gain_dt_3" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="fclt_id_4" Type="Edm.String" MaxLength="6"/>
+                <Property Name="mst_code_4" Type="Edm.String" MaxLength="3"/>
+                <Property Name="qcode_4" Type="Edm.String" MaxLength="5"/>
+                <Property Name="fclt_status_4" Type="Edm.String" MaxLength="6"/>
+                <Property Name="ams_status_4" Type="Edm.String" MaxLength="6"/>
+                <Property Name="rgst_type_4" Type="Edm.String" MaxLength="10"/>
+                <Property Name="install_stdt_4" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_schd_eddt_4" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_eddt_4" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_stdt_4" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_schd_eddt_4" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_eddt_4" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="asst_div_4" Type="Edm.String" MaxLength="5"/>
+                <Property Name="use_org_4" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mng_org_4" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mngr_4" Type="Edm.String" MaxLength="10"/>
+                <Property Name="inout_div_4" Type="Edm.String" MaxLength="8"/>
+                <Property Name="district_4" Type="Edm.String" MaxLength="12"/>
+                <Property Name="building_4" Type="Edm.String" MaxLength="20"/>
+                <Property Name="floor_4" Type="Edm.String" MaxLength="3"/>
+                <Property Name="line_4" Type="Edm.String" MaxLength="3"/>
+                <Property Name="bay_4" Type="Edm.String" MaxLength="3"/>
+                <Property Name="site_4" Type="Edm.String" MaxLength="3"/>
+                <Property Name="gbm_4" Type="Edm.String" MaxLength="10"/>
+                <Property Name="gain_dt_4" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="fclt_id_5" Type="Edm.String" MaxLength="6"/>
+                <Property Name="mst_code_5" Type="Edm.String" MaxLength="3"/>
+                <Property Name="qcode_5" Type="Edm.String" MaxLength="5"/>
+                <Property Name="fclt_status_5" Type="Edm.String" MaxLength="6"/>
+                <Property Name="ams_status_5" Type="Edm.String" MaxLength="6"/>
+                <Property Name="rgst_type_5" Type="Edm.String" MaxLength="10"/>
+                <Property Name="install_stdt_5" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_schd_eddt_5" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_eddt_5" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_stdt_5" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_schd_eddt_5" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_eddt_5" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="asst_div_5" Type="Edm.String" MaxLength="5"/>
+                <Property Name="use_org_5" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mng_org_5" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mngr_5" Type="Edm.String" MaxLength="10"/>
+                <Property Name="inout_div_5" Type="Edm.String" MaxLength="8"/>
+                <Property Name="district_5" Type="Edm.String" MaxLength="12"/>
+                <Property Name="building_5" Type="Edm.String" MaxLength="20"/>
+                <Property Name="floor_5" Type="Edm.String" MaxLength="3"/>
+                <Property Name="line_5" Type="Edm.String" MaxLength="3"/>
+                <Property Name="bay_5" Type="Edm.String" MaxLength="3"/>
+                <Property Name="site_5" Type="Edm.String" MaxLength="3"/>
+                <Property Name="gbm_5" Type="Edm.String" MaxLength="10"/>
+                <Property Name="gain_dt_5" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="fclt_id_6" Type="Edm.String" MaxLength="6"/>
+                <Property Name="mst_code_6" Type="Edm.String" MaxLength="3"/>
+                <Property Name="qcode_6" Type="Edm.String" MaxLength="5"/>
+                <Property Name="fclt_status_6" Type="Edm.String" MaxLength="6"/>
+                <Property Name="ams_status_6" Type="Edm.String" MaxLength="6"/>
+                <Property Name="rgst_type_6" Type="Edm.String" MaxLength="10"/>
+                <Property Name="install_stdt_6" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_schd_eddt_6" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_eddt_6" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_stdt_6" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_schd_eddt_6" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_eddt_6" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="asst_div_6" Type="Edm.String" MaxLength="5"/>
+                <Property Name="use_org_6" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mng_org_6" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mngr_6" Type="Edm.String" MaxLength="10"/>
+                <Property Name="inout_div_6" Type="Edm.String" MaxLength="8"/>
+                <Property Name="district_6" Type="Edm.String" MaxLength="12"/>
+                <Property Name="building_6" Type="Edm.String" MaxLength="20"/>
+                <Property Name="floor_6" Type="Edm.String" MaxLength="3"/>
+                <Property Name="line_6" Type="Edm.String" MaxLength="3"/>
+                <Property Name="bay_6" Type="Edm.String" MaxLength="3"/>
+                <Property Name="site_6" Type="Edm.String" MaxLength="3"/>
+                <Property Name="gbm_6" Type="Edm.String" MaxLength="10"/>
+                <Property Name="gain_dt_6" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="fclt_id_7" Type="Edm.String" MaxLength="6"/>
+                <Property Name="mst_code_7" Type="Edm.String" MaxLength="3"/>
+                <Property Name="qcode_7" Type="Edm.String" MaxLength="5"/>
+                <Property Name="fclt_status_7" Type="Edm.String" MaxLength="6"/>
+                <Property Name="ams_status_7" Type="Edm.String" MaxLength="6"/>
+                <Property Name="rgst_type_7" Type="Edm.String" MaxLength="10"/>
+                <Property Name="install_stdt_7" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_schd_eddt_7" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_eddt_7" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_stdt_7" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_schd_eddt_7" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_eddt_7" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="asst_div_7" Type="Edm.String" MaxLength="5"/>
+                <Property Name="use_org_7" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mng_org_7" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mngr_7" Type="Edm.String" MaxLength="10"/>
+                <Property Name="inout_div_7" Type="Edm.String" MaxLength="8"/>
+                <Property Name="district_7" Type="Edm.String" MaxLength="12"/>
+                <Property Name="building_7" Type="Edm.String" MaxLength="20"/>
+                <Property Name="floor_7" Type="Edm.String" MaxLength="3"/>
+                <Property Name="line_7" Type="Edm.String" MaxLength="3"/>
+                <Property Name="bay_7" Type="Edm.String" MaxLength="3"/>
+                <Property Name="site_7" Type="Edm.String" MaxLength="3"/>
+                <Property Name="gbm_7" Type="Edm.String" MaxLength="10"/>
+                <Property Name="gain_dt_7" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="fclt_id_8" Type="Edm.String" MaxLength="6"/>
+                <Property Name="mst_code_8" Type="Edm.String" MaxLength="3"/>
+                <Property Name="qcode_8" Type="Edm.String" MaxLength="5"/>
+                <Property Name="fclt_status_8" Type="Edm.String" MaxLength="6"/>
+                <Property Name="ams_status_8" Type="Edm.String" MaxLength="6"/>
+                <Property Name="rgst_type_8" Type="Edm.String" MaxLength="10"/>
+                <Property Name="install_stdt_8" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_schd_eddt_8" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_eddt_8" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_stdt_8" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_schd_eddt_8" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_eddt_8" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="asst_div_8" Type="Edm.String" MaxLength="5"/>
+                <Property Name="use_org_8" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mng_org_8" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mngr_8" Type="Edm.String" MaxLength="10"/>
+                <Property Name="inout_div_8" Type="Edm.String" MaxLength="8"/>
+                <Property Name="district_8" Type="Edm.String" MaxLength="12"/>
+                <Property Name="building_8" Type="Edm.String" MaxLength="20"/>
+                <Property Name="floor_8" Type="Edm.String" MaxLength="3"/>
+                <Property Name="line_8" Type="Edm.String" MaxLength="3"/>
+                <Property Name="bay_8" Type="Edm.String" MaxLength="3"/>
+                <Property Name="site_8" Type="Edm.String" MaxLength="3"/>
+                <Property Name="gbm_8" Type="Edm.String" MaxLength="10"/>
+                <Property Name="gain_dt_8" Type="Edm.DateTime" sap:display-format="Date"/>
+            </EntityType>
+            <EntityType Name="card01">
+                <Key>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="asst_type2" Type="Edm.String" MaxLength="10"/>
+                <Property Name="cost1" Type="Edm.Int64"/>
+                <Property Name="cost2" Type="Edm.Int64"/>
+                <Property Name="cnt" Type="Edm.Int32"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Relationship="DSOdataService.card01_DraftAdministrativeData" FromRole="card01" ToRole="DraftAdministrativeData"/>
+                <Property Name="DraftAdministrativeData_DraftUUID" Type="Edm.Guid"/>
+                <NavigationProperty Name="SiblingEntity" Relationship="DSOdataService.card01_SiblingEntity" FromRole="card01" ToRole="card011"/>
+            </EntityType>
+            <EntityType Name="card02_01">
+                <Key>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="line" Type="Edm.String" MaxLength="3"/>
+                <Property Name="line_lt_days" Type="Edm.Decimal" Scale="10" Precision="10"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Relationship="DSOdataService.card02_01_DraftAdministrativeData" FromRole="card02_01" ToRole="DraftAdministrativeData"/>
+                <Property Name="DraftAdministrativeData_DraftUUID" Type="Edm.Guid"/>
+                <NavigationProperty Name="SiblingEntity" Relationship="DSOdataService.card02_01_SiblingEntity" FromRole="card02_01" ToRole="card02_011"/>
+            </EntityType>
+            <EntityType Name="card02_02">
+                <Key>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="gbm" Type="Edm.String" MaxLength="10"/>
+                <Property Name="gbm_lt_days" Type="Edm.Decimal" Scale="10" Precision="10"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Relationship="DSOdataService.card02_02_DraftAdministrativeData" FromRole="card02_02" ToRole="DraftAdministrativeData"/>
+                <Property Name="DraftAdministrativeData_DraftUUID" Type="Edm.Guid"/>
+                <NavigationProperty Name="SiblingEntity" Relationship="DSOdataService.card02_02_SiblingEntity" FromRole="card02_02" ToRole="card02_021"/>
+            </EntityType>
+            <EntityType Name="card02_03">
+                <Key>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="site" Type="Edm.String" MaxLength="3"/>
+                <Property Name="site_lt_days" Type="Edm.Decimal" Scale="10" Precision="10"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Relationship="DSOdataService.card02_03_DraftAdministrativeData" FromRole="card02_03" ToRole="DraftAdministrativeData"/>
+                <Property Name="DraftAdministrativeData_DraftUUID" Type="Edm.Guid"/>
+                <NavigationProperty Name="SiblingEntity" Relationship="DSOdataService.card02_03_SiblingEntity" FromRole="card02_03" ToRole="card02_031"/>
+            </EntityType>
+            <EntityType Name="card02_04">
+                <Key>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="use_org" Type="Edm.String" MaxLength="20"/>
+                <Property Name="org_lt_days" Type="Edm.Decimal" Scale="10" Precision="10"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Relationship="DSOdataService.card02_04_DraftAdministrativeData" FromRole="card02_04" ToRole="DraftAdministrativeData"/>
+                <Property Name="DraftAdministrativeData_DraftUUID" Type="Edm.Guid"/>
+                <NavigationProperty Name="SiblingEntity" Relationship="DSOdataService.card02_04_SiblingEntity" FromRole="card02_04" ToRole="card02_041"/>
+            </EntityType>
+            <EntityType Name="card03">
+                <Key>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="fclt_id" Type="Edm.String" MaxLength="6"/>
+                <Property Name="asst_type1" Type="Edm.String" MaxLength="10"/>
+                <Property Name="asst_type2" Type="Edm.String" MaxLength="10"/>
+                <Property Name="asst_status" Type="Edm.String" MaxLength="10"/>
+                <Property Name="fclt_area" Type="Edm.String" MaxLength="3"/>
+                <Property Name="model" Type="Edm.String" MaxLength="2"/>
+                <Property Name="use_org" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mng_org" Type="Edm.String" MaxLength="20"/>
+                <Property Name="building" Type="Edm.String" MaxLength="20"/>
+                <Property Name="line" Type="Edm.String" MaxLength="3"/>
+                <Property Name="floor" Type="Edm.String" MaxLength="3"/>
+                <Property Name="eam_status" Type="Edm.String" MaxLength="10"/>
+                <Property Name="end_days" Type="Edm.Int32"/>
+                <Property Name="current_days" Type="Edm.Int32"/>
+                <Property Name="current_rate" Type="Edm.Decimal" Scale="2" Precision="3"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Relationship="DSOdataService.card03_DraftAdministrativeData" FromRole="card03" ToRole="DraftAdministrativeData"/>
+                <Property Name="DraftAdministrativeData_DraftUUID" Type="Edm.Guid"/>
+                <NavigationProperty Name="SiblingEntity" Relationship="DSOdataService.card03_SiblingEntity" FromRole="card03" ToRole="card031"/>
+            </EntityType>
+            <EntityType Name="card02_01_Performance">
+                <Property Name="line_1" Type="Edm.String" MaxLength="3"/>
+                <Property Name="line_lt_days" Type="Edm.Decimal" Scale="10" Precision="10"/>
+            </EntityType>
+            <EntityType Name="card03_Performance">
+                <Key>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="fclt_id" Type="Edm.String" MaxLength="6"/>
+                <Property Name="asst_type1" Type="Edm.String" MaxLength="10"/>
+                <Property Name="asst_type2" Type="Edm.String" MaxLength="10"/>
+                <Property Name="asst_status" Type="Edm.String" MaxLength="10"/>
+                <Property Name="fclt_area" Type="Edm.String" MaxLength="3"/>
+                <Property Name="model" Type="Edm.String" MaxLength="2"/>
+                <Property Name="use_org_1" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mng_org_1" Type="Edm.String" MaxLength="20"/>
+                <Property Name="building_1" Type="Edm.String" MaxLength="20"/>
+                <Property Name="line_1" Type="Edm.String" MaxLength="3"/>
+                <Property Name="floor_1" Type="Edm.String" MaxLength="3"/>
+                <Property Name="eam_status" Type="Edm.String" MaxLength="10"/>
+                <Property Name="end_days" Type="Edm.Int32"/>
+                <Property Name="current_days" Type="Edm.Int32"/>
+                <Property Name="current_rate" Type="Edm.Decimal" Scale="2" Precision="3"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Relationship="DSOdataService.card03_Performance_DraftAdministrativeData" FromRole="card03_Performance" ToRole="DraftAdministrativeData"/>
+                <Property Name="DraftAdministrativeData_DraftUUID" Type="Edm.Guid"/>
+                <NavigationProperty Name="SiblingEntity" Relationship="DSOdataService.card03_Performance_SiblingEntity" FromRole="card03_Performance" ToRole="card03_Performance1"/>
+            </EntityType>
+            <EntityType Name="card04">
+                <Property Name="cnt" Type="Edm.Int32"/>
+                <Property Name="totalCnt" Type="Edm.Int32"/>
+            </EntityType>
+            <EntityType Name="card_detail">
+                <Key>
+                    <PropertyRef Name="fclt_id"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="fclt_id" Type="Edm.String" MaxLength="6" Nullable="false"/>
+                <Property Name="qcode" Type="Edm.String" MaxLength="5"/>
+                <Property Name="cost1" Type="Edm.Decimal" Scale="10" Precision="15"/>
+                <Property Name="curr1" Type="Edm.String" MaxLength="3"/>
+                <Property Name="cost2" Type="Edm.Int64"/>
+                <Property Name="curr2" Type="Edm.String" MaxLength="3"/>
+                <Property Name="date1" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="asst_no" Type="Edm.String" MaxLength="5"/>
+                <Property Name="asst_type1" Type="Edm.String" MaxLength="10"/>
+                <Property Name="asst_type2" Type="Edm.String" MaxLength="10"/>
+                <Property Name="ds02_mst_code" Type="Edm.String" MaxLength="3"/>
+                <Property Name="asst_status" Type="Edm.String" MaxLength="10"/>
+                <Property Name="fclt_area" Type="Edm.String" MaxLength="3"/>
+                <Property Name="model" Type="Edm.String" MaxLength="2"/>
+                <Property Name="serial_no" Type="Edm.String" MaxLength="5"/>
+                <Property Name="ds03_mst_code" Type="Edm.String" MaxLength="3"/>
+                <Property Name="fclt_status" Type="Edm.String" MaxLength="6"/>
+                <Property Name="ds03_ams_status" Type="Edm.String" MaxLength="6"/>
+                <Property Name="rgst_type" Type="Edm.String" MaxLength="10"/>
+                <Property Name="install_stdt" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_schd_eddt" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="install_eddt" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_stdt" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_schd_eddt" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="dmsh_eddt" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="asst_div" Type="Edm.String" MaxLength="5"/>
+                <Property Name="use_org" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mng_org" Type="Edm.String" MaxLength="20"/>
+                <Property Name="lfcycl_mngr" Type="Edm.String" MaxLength="10"/>
+                <Property Name="inout_div" Type="Edm.String" MaxLength="8"/>
+                <Property Name="district" Type="Edm.String" MaxLength="12"/>
+                <Property Name="building" Type="Edm.String" MaxLength="20"/>
+                <Property Name="floor" Type="Edm.String" MaxLength="3"/>
+                <Property Name="line" Type="Edm.String" MaxLength="3"/>
+                <Property Name="bay" Type="Edm.String" MaxLength="3"/>
+                <Property Name="site" Type="Edm.String" MaxLength="3"/>
+                <Property Name="gbm" Type="Edm.String" MaxLength="10"/>
+                <Property Name="gain_dt" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="eam_status" Type="Edm.String" MaxLength="10"/>
+                <Property Name="ds04_ams_status" Type="Edm.String" MaxLength="6"/>
+                <Property Name="issue_status" Type="Edm.String" MaxLength="1"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Relationship="DSOdataService.card_detail_DraftAdministrativeData" FromRole="card_detail" ToRole="DraftAdministrativeData"/>
+                <Property Name="DraftAdministrativeData_DraftUUID" Type="Edm.Guid"/>
+                <NavigationProperty Name="SiblingEntity" Relationship="DSOdataService.card_detail_SiblingEntity" FromRole="card_detail" ToRole="card_detail1"/>
+            </EntityType>
+            <EntityType Name="DraftAdministrativeData">
+                <Key>
+                    <PropertyRef Name="DraftUUID"/>
+                </Key>
+                <Property Name="DraftUUID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="CreatedByUser" Type="Edm.String" MaxLength="256"/>
+                <Property Name="DraftIsCreatedByMe" Type="Edm.Boolean"/>
+                <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="LastChangedByUser" Type="Edm.String" MaxLength="256"/>
+                <Property Name="InProcessByUser" Type="Edm.String" MaxLength="256"/>
+                <Property Name="DraftIsProcessedByMe" Type="Edm.Boolean"/>
+            </EntityType>
+            <Association Name="DS_01_DraftAdministrativeData">
+                <End Role="DS_01" Type="DSOdataService.DS_01" Multiplicity="*"/>
+                <End Role="DraftAdministrativeData" Type="DSOdataService.DraftAdministrativeData" Multiplicity="0..1"/>
+                <ReferentialConstraint>
+                    <Principal Role="DraftAdministrativeData">
+                        <PropertyRef Name="DraftUUID"/>
+                    </Principal>
+                    <Dependent Role="DS_01">
+                        <PropertyRef Name="DraftAdministrativeData_DraftUUID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="DS_01_SiblingEntity">
+                <End Role="DS_01" Type="DSOdataService.DS_01" Multiplicity="*"/>
+                <End Role="DS_011" Type="DSOdataService.DS_01" Multiplicity="0..1"/>
+            </Association>
+            <Association Name="DS_02_DraftAdministrativeData">
+                <End Role="DS_02" Type="DSOdataService.DS_02" Multiplicity="*"/>
+                <End Role="DraftAdministrativeData" Type="DSOdataService.DraftAdministrativeData" Multiplicity="0..1"/>
+                <ReferentialConstraint>
+                    <Principal Role="DraftAdministrativeData">
+                        <PropertyRef Name="DraftUUID"/>
+                    </Principal>
+                    <Dependent Role="DS_02">
+                        <PropertyRef Name="DraftAdministrativeData_DraftUUID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="DS_02_SiblingEntity">
+                <End Role="DS_02" Type="DSOdataService.DS_02" Multiplicity="*"/>
+                <End Role="DS_021" Type="DSOdataService.DS_02" Multiplicity="0..1"/>
+            </Association>
+            <Association Name="DS_03_DraftAdministrativeData">
+                <End Role="DS_03" Type="DSOdataService.DS_03" Multiplicity="*"/>
+                <End Role="DraftAdministrativeData" Type="DSOdataService.DraftAdministrativeData" Multiplicity="0..1"/>
+                <ReferentialConstraint>
+                    <Principal Role="DraftAdministrativeData">
+                        <PropertyRef Name="DraftUUID"/>
+                    </Principal>
+                    <Dependent Role="DS_03">
+                        <PropertyRef Name="DraftAdministrativeData_DraftUUID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="DS_03_SiblingEntity">
+                <End Role="DS_03" Type="DSOdataService.DS_03" Multiplicity="*"/>
+                <End Role="DS_031" Type="DSOdataService.DS_03" Multiplicity="0..1"/>
+            </Association>
+            <Association Name="card01_DraftAdministrativeData">
+                <End Role="card01" Type="DSOdataService.card01" Multiplicity="*"/>
+                <End Role="DraftAdministrativeData" Type="DSOdataService.DraftAdministrativeData" Multiplicity="0..1"/>
+                <ReferentialConstraint>
+                    <Principal Role="DraftAdministrativeData">
+                        <PropertyRef Name="DraftUUID"/>
+                    </Principal>
+                    <Dependent Role="card01">
+                        <PropertyRef Name="DraftAdministrativeData_DraftUUID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="card01_SiblingEntity">
+                <End Role="card01" Type="DSOdataService.card01" Multiplicity="*"/>
+                <End Role="card011" Type="DSOdataService.card01" Multiplicity="0..1"/>
+            </Association>
+            <Association Name="card02_01_DraftAdministrativeData">
+                <End Role="card02_01" Type="DSOdataService.card02_01" Multiplicity="*"/>
+                <End Role="DraftAdministrativeData" Type="DSOdataService.DraftAdministrativeData" Multiplicity="0..1"/>
+                <ReferentialConstraint>
+                    <Principal Role="DraftAdministrativeData">
+                        <PropertyRef Name="DraftUUID"/>
+                    </Principal>
+                    <Dependent Role="card02_01">
+                        <PropertyRef Name="DraftAdministrativeData_DraftUUID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="card02_01_SiblingEntity">
+                <End Role="card02_01" Type="DSOdataService.card02_01" Multiplicity="*"/>
+                <End Role="card02_011" Type="DSOdataService.card02_01" Multiplicity="0..1"/>
+            </Association>
+            <Association Name="card02_02_DraftAdministrativeData">
+                <End Role="card02_02" Type="DSOdataService.card02_02" Multiplicity="*"/>
+                <End Role="DraftAdministrativeData" Type="DSOdataService.DraftAdministrativeData" Multiplicity="0..1"/>
+                <ReferentialConstraint>
+                    <Principal Role="DraftAdministrativeData">
+                        <PropertyRef Name="DraftUUID"/>
+                    </Principal>
+                    <Dependent Role="card02_02">
+                        <PropertyRef Name="DraftAdministrativeData_DraftUUID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="card02_02_SiblingEntity">
+                <End Role="card02_02" Type="DSOdataService.card02_02" Multiplicity="*"/>
+                <End Role="card02_021" Type="DSOdataService.card02_02" Multiplicity="0..1"/>
+            </Association>
+            <Association Name="card02_03_DraftAdministrativeData">
+                <End Role="card02_03" Type="DSOdataService.card02_03" Multiplicity="*"/>
+                <End Role="DraftAdministrativeData" Type="DSOdataService.DraftAdministrativeData" Multiplicity="0..1"/>
+                <ReferentialConstraint>
+                    <Principal Role="DraftAdministrativeData">
+                        <PropertyRef Name="DraftUUID"/>
+                    </Principal>
+                    <Dependent Role="card02_03">
+                        <PropertyRef Name="DraftAdministrativeData_DraftUUID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="card02_03_SiblingEntity">
+                <End Role="card02_03" Type="DSOdataService.card02_03" Multiplicity="*"/>
+                <End Role="card02_031" Type="DSOdataService.card02_03" Multiplicity="0..1"/>
+            </Association>
+            <Association Name="card02_04_DraftAdministrativeData">
+                <End Role="card02_04" Type="DSOdataService.card02_04" Multiplicity="*"/>
+                <End Role="DraftAdministrativeData" Type="DSOdataService.DraftAdministrativeData" Multiplicity="0..1"/>
+                <ReferentialConstraint>
+                    <Principal Role="DraftAdministrativeData">
+                        <PropertyRef Name="DraftUUID"/>
+                    </Principal>
+                    <Dependent Role="card02_04">
+                        <PropertyRef Name="DraftAdministrativeData_DraftUUID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="card02_04_SiblingEntity">
+                <End Role="card02_04" Type="DSOdataService.card02_04" Multiplicity="*"/>
+                <End Role="card02_041" Type="DSOdataService.card02_04" Multiplicity="0..1"/>
+            </Association>
+            <Association Name="card03_DraftAdministrativeData">
+                <End Role="card03" Type="DSOdataService.card03" Multiplicity="*"/>
+                <End Role="DraftAdministrativeData" Type="DSOdataService.DraftAdministrativeData" Multiplicity="0..1"/>
+                <ReferentialConstraint>
+                    <Principal Role="DraftAdministrativeData">
+                        <PropertyRef Name="DraftUUID"/>
+                    </Principal>
+                    <Dependent Role="card03">
+                        <PropertyRef Name="DraftAdministrativeData_DraftUUID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="card03_SiblingEntity">
+                <End Role="card03" Type="DSOdataService.card03" Multiplicity="*"/>
+                <End Role="card031" Type="DSOdataService.card03" Multiplicity="0..1"/>
+            </Association>
+            <Association Name="card03_Performance_DraftAdministrativeData">
+                <End Role="card03_Performance" Type="DSOdataService.card03_Performance" Multiplicity="*"/>
+                <End Role="DraftAdministrativeData" Type="DSOdataService.DraftAdministrativeData" Multiplicity="0..1"/>
+                <ReferentialConstraint>
+                    <Principal Role="DraftAdministrativeData">
+                        <PropertyRef Name="DraftUUID"/>
+                    </Principal>
+                    <Dependent Role="card03_Performance">
+                        <PropertyRef Name="DraftAdministrativeData_DraftUUID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="card03_Performance_SiblingEntity">
+                <End Role="card03_Performance" Type="DSOdataService.card03_Performance" Multiplicity="*"/>
+                <End Role="card03_Performance1" Type="DSOdataService.card03_Performance" Multiplicity="0..1"/>
+            </Association>
+            <Association Name="card_detail_DraftAdministrativeData">
+                <End Role="card_detail" Type="DSOdataService.card_detail" Multiplicity="*"/>
+                <End Role="DraftAdministrativeData" Type="DSOdataService.DraftAdministrativeData" Multiplicity="0..1"/>
+                <ReferentialConstraint>
+                    <Principal Role="DraftAdministrativeData">
+                        <PropertyRef Name="DraftUUID"/>
+                    </Principal>
+                    <Dependent Role="card_detail">
+                        <PropertyRef Name="DraftAdministrativeData_DraftUUID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="card_detail_SiblingEntity">
+                <End Role="card_detail" Type="DSOdataService.card_detail" Multiplicity="*"/>
+                <End Role="card_detail1" Type="DSOdataService.card_detail" Multiplicity="0..1"/>
+            </Association>
+            <Annotations Target="DSOdataService.DS_01" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields" Qualifier="DemoSF">
+                    <Collection>
+                        <PropertyPath>qcode</PropertyPath>
+                        <PropertyPath>cost1</PropertyPath>
+                        <PropertyPath>cost2</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="qcode"/>
+                            <PropertyValue Property="Label" String="Q코드"/>
+                            <Annotation Term="HTML5.CssDefaults">
+                                <Record Type="HTML5.CssDefaultsType">
+                                    <PropertyValue Property="width" String="auto"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="cost1"/>
+                            <PropertyValue Property="Label" String="금액_1"/>
+                            <Annotation Term="HTML5.CssDefaults">
+                                <Record Type="HTML5.CssDefaultsType">
+                                    <PropertyValue Property="width" String="auto"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="curr1"/>
+                            <PropertyValue Property="Label" String="통화_1"/>
+                            <Annotation Term="HTML5.CssDefaults">
+                                <Record Type="HTML5.CssDefaultsType">
+                                    <PropertyValue Property="width" String="auto"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="cost2"/>
+                            <PropertyValue Property="Label" String="금액_2"/>
+                            <Annotation Term="HTML5.CssDefaults">
+                                <Record Type="HTML5.CssDefaultsType">
+                                    <PropertyValue Property="width" String="auto"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="curr2"/>
+                            <PropertyValue Property="Label" String="통화_2"/>
+                            <Annotation Term="HTML5.CssDefaults">
+                                <Record Type="HTML5.CssDefaultsType">
+                                    <PropertyValue Property="width" String="auto"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="date1"/>
+                            <PropertyValue Property="Label" String="일자"/>
+                            <Annotation Term="HTML5.CssDefaults">
+                                <Record Type="HTML5.CssDefaultsType">
+                                    <PropertyValue Property="width" String="auto"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSOdataService.EntityContainer/DS_01" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="DSOdataService.EntityContainer/DS_01_draftActivate"/>
+                        <PropertyValue Property="EditAction" String="DSOdataService.EntityContainer/DS_01_draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="DSOdataService.EntityContainer/DS_01_draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSOdataService.DS_01/IsActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.DS_01/HasActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.DS_01/HasDraftEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.DS_01/DraftAdministrativeData" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.DS_01/DraftAdministrativeData_DraftUUID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.EntityContainer/DS_02" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="DSOdataService.EntityContainer/DS_02_draftActivate"/>
+                        <PropertyValue Property="EditAction" String="DSOdataService.EntityContainer/DS_02_draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="DSOdataService.EntityContainer/DS_02_draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSOdataService.DS_02/IsActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.DS_02/HasActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.DS_02/HasDraftEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.DS_02/DraftAdministrativeData" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.DS_02/DraftAdministrativeData_DraftUUID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.EntityContainer/DS_03" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="DSOdataService.EntityContainer/DS_03_draftActivate"/>
+                        <PropertyValue Property="EditAction" String="DSOdataService.EntityContainer/DS_03_draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="DSOdataService.EntityContainer/DS_03_draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSOdataService.DS_03/IsActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.DS_03/HasActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.DS_03/HasDraftEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.DS_03/DraftAdministrativeData" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.DS_03/DraftAdministrativeData_DraftUUID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.EntityContainer/card01" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="DSOdataService.EntityContainer/card01_draftActivate"/>
+                        <PropertyValue Property="EditAction" String="DSOdataService.EntityContainer/card01_draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="DSOdataService.EntityContainer/card01_draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSOdataService.card01/cost1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card01/cost2" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card01/cnt" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card01/IsActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card01/HasActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card01/HasDraftEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card01/DraftAdministrativeData" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card01/DraftAdministrativeData_DraftUUID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.EntityContainer/card02_01" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="DSOdataService.EntityContainer/card02_01_draftActivate"/>
+                        <PropertyValue Property="EditAction" String="DSOdataService.EntityContainer/card02_01_draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="DSOdataService.EntityContainer/card02_01_draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_01/line_lt_days" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_01/IsActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_01/HasActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_01/HasDraftEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_01/DraftAdministrativeData" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_01/DraftAdministrativeData_DraftUUID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.EntityContainer/card02_02" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="DSOdataService.EntityContainer/card02_02_draftActivate"/>
+                        <PropertyValue Property="EditAction" String="DSOdataService.EntityContainer/card02_02_draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="DSOdataService.EntityContainer/card02_02_draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_02/gbm_lt_days" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_02/IsActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_02/HasActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_02/HasDraftEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_02/DraftAdministrativeData" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_02/DraftAdministrativeData_DraftUUID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.EntityContainer/card02_03" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="DSOdataService.EntityContainer/card02_03_draftActivate"/>
+                        <PropertyValue Property="EditAction" String="DSOdataService.EntityContainer/card02_03_draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="DSOdataService.EntityContainer/card02_03_draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_03/site_lt_days" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_03/IsActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_03/HasActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_03/HasDraftEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_03/DraftAdministrativeData" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_03/DraftAdministrativeData_DraftUUID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.EntityContainer/card02_04" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="DSOdataService.EntityContainer/card02_04_draftActivate"/>
+                        <PropertyValue Property="EditAction" String="DSOdataService.EntityContainer/card02_04_draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="DSOdataService.EntityContainer/card02_04_draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_04/org_lt_days" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_04/IsActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_04/HasActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_04/HasDraftEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_04/DraftAdministrativeData" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_04/DraftAdministrativeData_DraftUUID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.EntityContainer/card03" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="DSOdataService.EntityContainer/card03_draftActivate"/>
+                        <PropertyValue Property="EditAction" String="DSOdataService.EntityContainer/card03_draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="DSOdataService.EntityContainer/card03_draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSOdataService.card03/end_days" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card03/current_days" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card03/current_rate" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card03/IsActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card03/HasActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card03/HasDraftEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card03/DraftAdministrativeData" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card03/DraftAdministrativeData_DraftUUID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card02_01_Performance/line_lt_days" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.EntityContainer/card03_Performance" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="DSOdataService.EntityContainer/card03_Performance_draftActivate"/>
+                        <PropertyValue Property="EditAction" String="DSOdataService.EntityContainer/card03_Performance_draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="DSOdataService.EntityContainer/card03_Performance_draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSOdataService.card03_Performance/end_days" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card03_Performance/current_days" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card03_Performance/current_rate" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card03_Performance/IsActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card03_Performance/HasActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card03_Performance/HasDraftEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card03_Performance/DraftAdministrativeData" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card03_Performance/DraftAdministrativeData_DraftUUID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card04/cnt" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card04/totalCnt" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields" Qualifier="DemoSF">
+                    <Collection>
+                        <PropertyPath>qcode</PropertyPath>
+                        <PropertyPath>cost1</PropertyPath>
+                        <PropertyPath>cost2</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="qcode"/>
+                            <PropertyValue Property="Label" String="Q코드"/>
+                            <Annotation Term="HTML5.CssDefaults">
+                                <Record Type="HTML5.CssDefaultsType">
+                                    <PropertyValue Property="width" String="auto"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="cost1"/>
+                            <PropertyValue Property="Label" String="금액_1"/>
+                            <Annotation Term="HTML5.CssDefaults">
+                                <Record Type="HTML5.CssDefaultsType">
+                                    <PropertyValue Property="width" String="auto"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="curr1"/>
+                            <PropertyValue Property="Label" String="통화_1"/>
+                            <Annotation Term="HTML5.CssDefaults">
+                                <Record Type="HTML5.CssDefaultsType">
+                                    <PropertyValue Property="width" String="auto"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="cost2"/>
+                            <PropertyValue Property="Label" String="금액_2"/>
+                            <Annotation Term="HTML5.CssDefaults">
+                                <Record Type="HTML5.CssDefaultsType">
+                                    <PropertyValue Property="width" String="auto"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="curr2"/>
+                            <PropertyValue Property="Label" String="통화_2"/>
+                            <Annotation Term="HTML5.CssDefaults">
+                                <Record Type="HTML5.CssDefaultsType">
+                                    <PropertyValue Property="width" String="auto"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="date1"/>
+                            <PropertyValue Property="Label" String="일자"/>
+                            <Annotation Term="HTML5.CssDefaults">
+                                <Record Type="HTML5.CssDefaultsType">
+                                    <PropertyValue Property="width" String="auto"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSOdataService.EntityContainer/card_detail" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="DSOdataService.EntityContainer/card_detail_draftActivate"/>
+                        <PropertyValue Property="EditAction" String="DSOdataService.EntityContainer/card_detail_draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="DSOdataService.EntityContainer/card_detail_draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/fclt_id" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="설비ID"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/qcode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Q코드"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/cost1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="취득가"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/curr1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="취득가단위"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/cost2" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="장부가"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/curr2" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="장부가단위"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/date1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="App일자"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/asst_no" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="자산번호"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/asst_type1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="자산유형0"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/asst_type2" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="자산유형1"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/ds02_mst_code" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="마스터코드"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/asst_status" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="자산상태"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/fclt_area" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="설비Area"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/model" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Model"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/serial_no" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="시리얼번호"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/ds03_mst_code" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="마스터코드"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/fclt_status" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="설비상태"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/ds03_ams_status" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="AMS상태"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/rgst_type" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="등록유형"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/install_stdt" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="설치시작일"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/install_schd_eddt" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="설치예정시작일"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/install_eddt" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="설치종료일"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/dmsh_stdt" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="철거시작일"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/dmsh_schd_eddt" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="철거시작예정일"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/dmsh_eddt" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="철거종료일"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/asst_div" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="자산구분"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/use_org" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="사용부서"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/lfcycl_mng_org" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="생애관리부서"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/lfcycl_mngr" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="생애관리자"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/inout_div" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="사내외구분"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/district" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="District"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/building" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Building"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/floor" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Floor"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/line" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Line"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/bay" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Bay"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/site" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Site"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/gbm" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="사업부"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/gain_dt" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="취득일자"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/eam_status" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="EAM상태"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/ds04_ams_status" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="AMS상태"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/issue_status" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.Computed" Bool="true"/>
+                <Annotation Term="Common.Label" String="상태이상"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/IsActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/HasActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/HasDraftEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/DraftAdministrativeData" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.card_detail/DraftAdministrativeData_DraftUUID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSOdataService.DraftAdministrativeData" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="{i18n>Draft_DraftAdministrativeData}"/>
+                </Annotations>
+                <Annotations Target="DSOdataService.DraftAdministrativeData/DraftUUID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                    <Annotation Term="UI.Hidden" Bool="true"/>
+                    <Annotation Term="Common.Label" String="{i18n>Draft_DraftUUID}"/>
+                    </Annotations>
+                    <Annotations Target="DSOdataService.DraftAdministrativeData/CreationDateTime" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                        <Annotation Term="Common.Label" String="{i18n>Draft_CreationDateTime}"/>
+                        </Annotations>
+                        <Annotations Target="DSOdataService.DraftAdministrativeData/CreatedByUser" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                            <Annotation Term="Common.Label" String="{i18n>Draft_CreatedByUser}"/>
+                            </Annotations>
+                            <Annotations Target="DSOdataService.DraftAdministrativeData/DraftIsCreatedByMe" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                                <Annotation Term="UI.Hidden" Bool="true"/>
+                                <Annotation Term="Common.Label" String="{i18n>Draft_DraftIsCreatedByMe}"/>
+                                </Annotations>
+                                <Annotations Target="DSOdataService.DraftAdministrativeData/LastChangeDateTime" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                                    <Annotation Term="Common.Label" String="{i18n>Draft_LastChangeDateTime}"/>
+                                    </Annotations>
+                                    <Annotations Target="DSOdataService.DraftAdministrativeData/LastChangedByUser" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                                        <Annotation Term="Common.Label" String="{i18n>Draft_LastChangedByUser}"/>
+                                        </Annotations>
+                                        <Annotations Target="DSOdataService.DraftAdministrativeData/InProcessByUser" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                                            <Annotation Term="Common.Label" String="{i18n>Draft_InProcessByUser}"/>
+                                            </Annotations>
+                                            <Annotations Target="DSOdataService.DraftAdministrativeData/DraftIsProcessedByMe" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                                                <Annotation Term="UI.Hidden" Bool="true"/>
+                                                <Annotation Term="Common.Label" String="{i18n>Draft_DraftIsProcessedByMe}"/>
+                                                </Annotations>
+                                            </Schema>
+                                        </edmx:DataServices>
+                                    </edmx:Edmx>
