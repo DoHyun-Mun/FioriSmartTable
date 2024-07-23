@@ -39,14 +39,60 @@
 
             <uxap:ObjectPageSection id="uxap_objectionPageSection2" titleUppercase="true" title="Section">
                 <uxap:subSections>
-                    <uxap:ObjectPageSubSection id="uxap_objectPageSubSection2" title="Other Section">
-                        <smartform:SmartForm id="uxap_smartForm2" editable="false">
-                            <smartform:Group id="uxap_group21">
-                            </smartform:Group>
-                        </smartform:SmartForm>
+                    <uxap:ObjectPageSubSection id="uxap_objectPageSubSection2" title="Update">
+                        <uxap:blocks>
+							<f:SimpleForm id="updateForm" editable="true" layout="ResponsiveGridLayout">
+								<f:content>                                
+									<Label id="l_qcode" text="Q코드" required="true">
+									</Label>
+									<Input value="{ path : 'qcode', type : 'sap.ui.model.type.String' }" 
+                                        placeholder="Write Qcode here" required="true" fieldGroupIds="Required" 
+                                        valueStateText="Required Field." id="i_qcode" change="">
+                                    </Input>
+                                    <Label id="l_cost1" text="금액_1">
+									</Label>
+									<Input value="{ path : 'cost1', type : 'sap.ui.model.type.String' }" 
+                                        placeholder="Write Cost_1 here" fieldGroupIds="Required" 
+                                        valueStateText="Required Field." id="i_cost1" change="">
+                                    </Input>
+                                    <Label id="l_curr1" text="통화_1" required="true">
+									</Label>
+									<Input value="{ path : 'curr1', type : 'sap.ui.model.type.String' }" 
+                                        placeholder="Write Currency_1 here" required="true" fieldGroupIds="Required" 
+                                        valueStateText="Required Field." id="i_curr1" change="">
+                                    </Input>   
+                                    <Label id="l_cost2" text="금액_2" required="true">
+									</Label>
+									<Input value="{ path : 'cost2', type : 'sap.ui.model.type.String' }" 
+                                        placeholder="Write Cost_2 here" required="true" fieldGroupIds="Required" 
+                                        valueStateText="Required Field." id="i_cost2" change="">
+                                    </Input>
+                                    <Label id="l_curr2" text="통화_2">
+									</Label>
+									<Input value="{ path : 'curr2', type : 'sap.ui.model.type.String' }" 
+                                        placeholder="Write Currency_2 here" fieldGroupIds="Required" 
+                                        valueStateText="Required Field." id="i_curr2" change="">
+                                    </Input>      
+                                    <Label id="l_date1" text="날짜" >
+									</Label>
+									<DatePicker value="{ path : 'date1', type : 'sap.ui.model.type.Date', formatOptions : { pattern: 'yyyy-MM-dd'} }" 
+                                        placeholder="Write Date here" fieldGroupIds="Required" 
+                                        valueStateText="Required Field." id="i_date1" change="">
+                                    </DatePicker>                                
+								</f:content>
+							</f:SimpleForm>                            
+                        </uxap:blocks>
                     </uxap:ObjectPageSubSection>
                 </uxap:subSections>
             </uxap:ObjectPageSection>
+
         </uxap:sections>
+        <uxap:footer>
+            <OverflowToolbar id="toolbar">
+                <ToolbarSpacer id="spacer" />
+                <Button type="Emphasized" id="boardUpdater" text="Edit" press="onUpdate" />
+                <Button type="Default" id="cacenlbtn" text="Cancel" press="onBack" />
+            </OverflowToolbar>
+        </uxap:footer>
     </uxap:ObjectPageLayout>
 </mvc:View>
