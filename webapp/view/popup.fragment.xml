@@ -1,0 +1,139 @@
+<core:FragmentDefinition 
+    xmlns="sap.ui.table"
+	xmlns:m="sap.m"
+    xmlns:f="sap.ui.layout.form"        
+	xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core">
+    <m:Dialog id="popup" title="Test Popup">
+        <m:content>
+		<l:Grid id="_IDGenGrid1" hSpacing="0" defaultSpan="XL4 L4 M6 S12" class="sapUiSmallMargin">                    
+				<l:content>                         
+					<l:VerticalLayout id="_IDGenVerticalLayout1" width="98%">
+						<m:Label id="_IDGenLabel1" text="공장"/>
+						<m:Select id="f_Plant" forceSelection="false" selectedKey="" width="80%" editable="false">
+							<core:Item id="_IDGenItem1" key="HK11" text="HK11 울산 CKD 공장"/>
+							<core:Item id="_IDGenItem2" key="HK21" text="HK21 아산 CKD 공장"/>
+						</m:Select>
+					</l:VerticalLayout>     
+					<l:VerticalLayout id="_IDGenVerticalLayout2" width="98%">
+						<m:Label id="_IDGenLabel2" text="오더번호"/>
+						<l:HorizontalLayout id="_IDGenHorizontalLayout1" allowWrapping="true">
+							<m:Input id="f_orderNoFrom" placeholder="" value="" width="45%" editable="false"/>
+							<m:Text id="_IDGenText1" text="~" wrappingType="Hyphenated" class="sapUiTinyMarginBegin sapUiTinyMarginEnd "/>
+							<m:Input id="f_orderNoTo" placeholder="" value="" width="45%" editable="false"/>
+						</l:HorizontalLayout>                     
+					</l:VerticalLayout>
+					<l:VerticalLayout id="_IDGenVerticalLayout3" width="98%">
+					<m:Label id="_IDGenLabel3" text="Case No"/>
+						<l:HorizontalLayout id="_IDGenHorizontalLayout2" allowWrapping="true">
+							<m:Input id="f_caseNoFrom" placeholder="" value="" width="45%" editable="false"/>
+							<m:Text id="_IDGenText2" text="~" wrappingType="Hyphenated" class="sapUiTinyMarginBegin sapUiTinyMarginEnd "/>
+							<m:Input id="f_caseNoTo" placeholder="" value="" width="45%" editable="false"/>
+						</l:HorizontalLayout>
+					</l:VerticalLayout>
+				</l:content>
+			</l:Grid>
+            <Table id="table1" ariaLabelledBy="title" rows="{mShippingMark>/}" 
+				enableColumnFreeze="true" showColumnVisibilityMenu="true" class="sapUiSmallMargin"
+				selectionMode="Single" selectionBehavior="RowOnly">
+				<columns>
+					<Column id="_IDGenColumn1" width="6rem" hAlign="Center">
+						<m:Label id="_IDGenLabel4" text="국가차종"/>
+						<template>
+							<m:Text id="_IDGenText3" text="{mShippingMark>ZCKDCAR}" wrapping="false" />
+						</template>
+					</Column>
+					<Column id="_IDGenColumn2" width="6rem" hAlign="Begin">
+						<m:Label id="_IDGenLabel5" text="국가명" />
+						<template>
+							<m:Label id="_IDGenLabel6" text="{mShippingMark>ZMNATE}" />
+						</template>
+					</Column>
+					<Column id="_IDGenColumn3" width="6rem" hAlign="Begin">
+						<m:Label id="_IDGenLabel7" text="차종명" />
+						<template>
+							<m:Label id="_IDGenLabel8" text="{mShippingMark>ZMCARE}" />
+						</template>
+					</Column>
+					<Column id="_IDGenColumn4" width="6rem" hAlign="Begin">
+						<m:Label id="_IDGenLabel9" text="딜러명" />
+						<template>
+							<m:Label id="_IDGenLabel10" text="{mShippingMark>ZMDEALE}" />
+						</template>
+					</Column>
+					<Column id="_IDGenColumn5" width="11rem" hAlign="Begin">
+						<m:Label id="_IDGenLabel11" text="도착항구" />
+						<template>
+							<m:Label id="_IDGenLabel12" text="{mShippingMark>ZMPORT}" />
+						</template>
+					</Column>
+					<Column id="_IDGenColumn6" width="11rem" hAlign="Begin">
+						<m:Label id="_IDGenLabel13" text="오더번호" />
+						<template>
+							<m:Label id="_IDGenLabel14" text="{mShippingMark>VBELN}" />
+						</template>
+					</Column>
+					<Column id="_IDGenColumn7" width="6rem" hAlign="Begin">
+						<m:Label id="_IDGenLabel15" text="Case No" />
+						<template>
+							<m:Label id="_IDGenLabel16" text="{mShippingMark>ZNCASEN}" />
+						</template>
+					</Column>
+					<Column id="_IDGenColumn8" width="6rem" hAlign="Begin">
+						<m:Label id="_IDGenLabel17" text="Short Unit SPEC" />
+						<template>
+							<m:Label id="_IDGenLabel18" text="{mShippingMark>ZCSPEC23}" />
+						</template>
+					</Column>
+					<Column id="_IDGenColumn9" width="6rem" hAlign="End">
+						<m:Label id="_IDGenLabel19" text="순중량(kg)" />
+						<template>
+							<m:Label id="_IDGenLabel20" text="{mShippingMark>ZQNTGEW}" />
+						</template>
+					</Column>
+					<Column id="_IDGenColumn10" width="6rem" hAlign="End">
+						<m:Label id="_IDGenLabel21" text="총중량(kg)" />
+						<template>
+							<m:Label id="_IDGenLabel22" text="{mShippingMark>BRGEW}" />
+						</template>
+					</Column>
+					<Column id="_IDGenColumn11" width="6rem" hAlign="End">
+						<m:Label id="_IDGenLabel23" text="가로(cm)" />
+						<template>
+							<m:Label id="_IDGenLabel24" text="{mShippingMark>ZQWIDT2}" />
+						</template>
+					</Column>					
+					<Column id="_IDGenColumn12" width="6rem" hAlign="End">
+						<m:Label id="_IDGenLabel25" text="세로(cm)" />
+						<template>
+							<m:Label id="_IDGenLabel26" text="{mShippingMark>ZQLENGT}" />
+						</template>
+					</Column>
+					<Column id="_IDGenColumn13" width="6rem" hAlign="End">
+						<m:Label id="_IDGenLabel27" text="높이(cm)" />
+						<template>
+							<m:Label id="_IDGenLabel28" text="{mShippingMark>ZQHEIGH}" />
+						</template>
+					</Column>
+					<Column id="_IDGenColumn14" width="6rem" hAlign="Begin">
+						<m:Label id="_IDGenLabel29" text="방역구분" />
+						<template>
+							<m:Label id="_IDGenLabel30" text="{mShippingMark>ZFDSCNTR}" />
+						</template>
+					</Column>
+					<Column id="_IDGenColumn15" width="6rem" hAlign="Begin">
+						<m:Label id="_IDGenLabel31" text="포장라인" />
+						<template>
+							<m:Label id="_IDGenLabel32" text="{mShippingMark>ZMPACKL}" />
+						</template>
+					</Column>
+				</columns>
+			</Table>
+        </m:content>
+
+        <m:buttons>
+            <m:Button id="_IDGenButton1" icon="sap-icon://pdf-attachment" text="PDF" type="Emphasized" press="onPDFPrintImgTst" />
+            <m:Button id="_IDGenButton3" icon="sap-icon://cancel" text="Cancel" type="Transparent" press="onClose" />
+        </m:buttons>
+    </m:Dialog>
+</core:FragmentDefinition>
