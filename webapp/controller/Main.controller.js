@@ -19,7 +19,24 @@ sap.ui.define([
             },
 
             btnOnPress: function() {
-                alert("This is Custom Action Button!!");
+                if (!this.byId("popup")) {
+                    Fragment.load({
+                        id: this.getView().getId(),
+                        name: "com.sap.demo.smarttabledemo.view.fragment.popup",
+                        controller: this,
+                    }).then(
+                        function (oDialog) {
+                            this.getView().addDependent(oDialog);
+                            oDialog.open(oDialog);
+                        }.bind(this)
+                    );
+                } else {
+                    this.byId("popup").open("popup");
+                }
+            },
+
+            onClose : function () {
+                this.byId("popup").close();
             }
         });
     });
