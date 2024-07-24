@@ -5,7 +5,7 @@
     xmlns:smartfield="sap.ui.comp.smartfield"
     >
     
-    <uxap:ObjectPageLayout id="uxap_objectPageLayout" enableLazyLoading="true" showTitleInHeaderContent="true">
+    <uxap:ObjectPageLayout id="uxap_objectPageLayout" enableLazyLoading="true" showTitleInHeaderContent="true" showFooter="true">
         <uxap:headerTitle>
             <uxap:ObjectPageHeader id="uxap_objectPageHeader" objectTitle="QCode Detail Page" objectSubtitle="QCode: {qcode}" 
                 isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="false" isObjectSubtitleAlwaysVisible="false">
