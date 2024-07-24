@@ -1,1 +1,73 @@
+<core:FragmentDefinition 
+    xmlns="sap.ui.table"
+	xmlns:m="sap.m"
+    xmlns:f="sap.ui.layout.form"        
+	xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core">
+    <m:Dialog id="popup" title="Test Popup">
+        <m:content>
+		<l:Grid id="_IDGenGrid1" hSpacing="0" defaultSpan="XL4 L4 M6 S12" class="sapUiSmallMargin">                    
+				<l:content>                         
+					<l:VerticalLayout id="_IDGenVerticalLayout1" width="98%">
+						<m:Label id="_IDGenLabel1" text="Temp"/>
+						<m:Select id="f_Plant" forceSelection="false" selectedKey="" width="80%" editable="false">
+							<core:Item id="_IDGenItem1" key="HK11" text="AAAAAA"/>
+							<core:Item id="_IDGenItem2" key="HK21" text="BBBBBB"/>
+						</m:Select>
+					</l:VerticalLayout>     
+					<l:VerticalLayout id="_IDGenVerticalLayout2" width="98%">
+						<m:Label id="_IDGenLabel2" text="오더번호"/>
+						<l:HorizontalLayout id="_IDGenHorizontalLayout1" allowWrapping="true">
+							<m:Input id="f_orderNoFrom" placeholder="" value="" width="45%" editable="false"/>
+							<m:Text id="_IDGenText1" text="~" wrappingType="Hyphenated" class="sapUiTinyMarginBegin sapUiTinyMarginEnd "/>
+							<m:Input id="f_orderNoTo" placeholder="" value="" width="45%" editable="false"/>
+						</l:HorizontalLayout>                     
+					</l:VerticalLayout>
+					<l:VerticalLayout id="_IDGenVerticalLayout3" width="98%">
+					<m:Label id="_IDGenLabel3" text="Case No"/>
+						<l:HorizontalLayout id="_IDGenHorizontalLayout2" allowWrapping="true">
+							<m:Input id="f_caseNoFrom" placeholder="" value="" width="45%" editable="false"/>
+							<m:Text id="_IDGenText2" text="~" wrappingType="Hyphenated" class="sapUiTinyMarginBegin sapUiTinyMarginEnd "/>
+							<m:Input id="f_caseNoTo" placeholder="" value="" width="45%" editable="false"/>
+						</l:HorizontalLayout>
+					</l:VerticalLayout>
+				</l:content>
+			</l:Grid>
+            <Table id="table1" ariaLabelledBy="title" rows="{mShippingMark>/}" 
+				enableColumnFreeze="true" showColumnVisibilityMenu="true" class="sapUiSmallMargin"
+				selectionMode="Single" selectionBehavior="RowOnly">
+				<columns>
+					<Column id="_IDGenColumn1" width="6rem" hAlign="Center">
+						<m:Label id="_IDGenLabel4" text="AA"/>
+						<template>
+							<m:Text id="_IDGenText3" text="{mShippingMark>ZCKDCAR}" wrapping="false" />
+						</template>
+					</Column>
+					<Column id="_IDGenColumn2" width="6rem" hAlign="Begin">
+						<m:Label id="_IDGenLabel5" text="BB" />
+						<template>
+							<m:Label id="_IDGenLabel6" text="{mShippingMark>ZMNATE}" />
+						</template>
+					</Column>
+					<Column id="_IDGenColumn3" width="6rem" hAlign="Begin">
+						<m:Label id="_IDGenLabel7" text="CC" />
+						<template>
+							<m:Label id="_IDGenLabel8" text="{mShippingMark>ZMCARE}" />
+						</template>
+					</Column>
+					<Column id="_IDGenColumn4" width="6rem" hAlign="Begin">
+						<m:Label id="_IDGenLabel9" text="DD" />
+						<template>
+							<m:Label id="_IDGenLabel10" text="{mShippingMark>ZMDEALE}" />
+						</template>
+					</Column>					
+				</columns>
+			</Table>
+        </m:content>
 
+        <m:buttons>
+            <m:Button id="_IDGenButton1" icon="sap-icon://pdf-attachment" text="PDF" type="Emphasized" press="onPDFPrintImgTst" />
+            <m:Button id="_IDGenButton3" icon="sap-icon://cancel" text="Cancel" type="Transparent" press="onClose" />
+        </m:buttons>
+    </m:Dialog>
+</core:FragmentDefinition>
