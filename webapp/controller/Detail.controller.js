@@ -1,11 +1,12 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
-    
+    "sap/ui/core/mvc/Controller",
+    "sap/m/MessageBox",
+    'sap/ui/core/BusyIndicator'
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller) {
+    function (Controller, MessageBox, BusyIndicator) {
         "use strict";
 
         return Controller.extend("com.sap.demo.smarttabledemo.controller.Detail", {
