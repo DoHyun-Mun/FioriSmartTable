@@ -3,6 +3,7 @@
     xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:smartform="sap.ui.comp.smartform"
     xmlns:smartfield="sap.ui.comp.smartfield"
+    xmlns:f="sap.ui.layout.form"
     >
     
     <uxap:ObjectPageLayout id="uxap_objectPageLayout" enableLazyLoading="true" showTitleInHeaderContent="true" showFooter="true">
